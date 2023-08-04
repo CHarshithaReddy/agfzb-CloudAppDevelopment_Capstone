@@ -18,7 +18,7 @@ urlpatterns = [
     # path for login
 
     # path for logout
-
+    path(route='static_django_template/', view=views.my_view, name='static_django_template'),
     path(route='', view=views.get_dealerships, name='index'),
 
     # path for dealer reviews view
