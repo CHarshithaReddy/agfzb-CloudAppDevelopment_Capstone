@@ -10,14 +10,16 @@ urlpatterns = [
     # name the URL
 
     # path for about view
-
+    path(route='about/', view=views.about, name='about'),
+    path(route='contact/', view=views.contact, name='contact'),
     # path for contact us view
 
     # path for registration
 
     # path for login
-
-    # path for logout
+    path(route='', view=views.login_request, name='index'),
+    path(route='', view=views.logout_request, name='index'),
+    path(route='', view=views.registration_request, name='registration'),
     path(route='static_django_template/', view=views.my_view, name='static_django_template'),
     path(route='', view=views.get_dealerships, name='index'),
 

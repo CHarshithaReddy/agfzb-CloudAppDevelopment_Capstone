@@ -17,10 +17,27 @@
     <!-- Remove this line the first time you edit this file -->
     <!--Add a nav bar here -->
     <nav>
+        <form action=" " method="post">
+            <label for="Username">Username:</label>
+            <input type="text" id="username" name="username" required> <br>
+
+            <label for="Password">Password:</label>
+            <input type="password" id="password" name="password" required> <br/>
+            <button type="submit">Login</button> <br>
+        </form>
+    <a href=" ">SignUp</a>
+
         <ul>
             <li><a href="#">Home</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="contact.html">Contact</a></li>
+            {% if user.is_authenticated %}
+            <li><span>Welcome, {{ user.first_name|default:user.username }}</span></li>
+            <li><a href="{% url 'signout_view_name' %}">Sign Out</a></li>
+            {% else %}
+            <li><a href="{% url 'login_view_name' %}">Login</a></li>
+            <li><a href="{% url 'signup_view_name' %}">Signup</a></li>
+        {% endif %}
         </ul>
     </nav>
     <!--Add a dealer table here -->
